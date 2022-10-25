@@ -1,0 +1,18 @@
+--assets - folder for styles and scripts
+------css - contains all project styles
+------img - folder with images
+------js - folder for javascript files
+
+--conf - contains project settings
+
+--Controllers - classes for responding to events coming from the client
+
+--lib - auxiliary classes
+
+--Repositories - files for forming queries to the database
+
+--Services - files for data processing
+
+--upload - folder to download imported files
+
+--views - files to display pages

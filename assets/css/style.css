@@ -1,0 +1,121 @@
+/* тiло документу */
+body {
+  background: #1a1a1d;
+  font-family: "Montserrat", sans-serif;
+}
+
+/* шапка сайту */
+header {
+  margin: 10px 0;
+  width: 100%;
+  height: 100px;
+}
+
+/* Стилі для посилань в шапці */
+.sign,
+.rega {
+  font-size: 22px;
+  font-weight: 600;
+  text-decoration: none;
+  text-transform: uppercase;
+  float: right;
+  margin-top: 20px;
+  margin-right: 5px;
+  background: #c3073f;
+  border: 0;
+  color: #ffffff;
+  padding: 5px 5px;
+}
+
+/* Контейнер */
+.container {
+  width: 1170px;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.header-top .container {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Логотип */
+.logo img {
+  width: 178px;
+  height: 75px;
+  float: left;
+  margin-bottom: 6px;
+}
+
+/* пошук */
+.search {
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+}
+
+/* поле пошуку */
+.search input {
+  padding: 10px 10px;
+  margin-right: 6px;
+  background: linear-gradient(109.46deg,
+      rgba(201, 201, 201, 0.8) 1.57%,
+      rgba(196, 196, 196, 0.1) 100%);
+  opacity: 0.5;
+  backdrop-filter: blur(60px);
+  border-radius: 7px;
+  border: none;
+  color: #ffffff;
+  font-size: 15px;
+  max-width: 187px;
+  outline: none;
+  max-height: 20px;
+}
+
+/* плейсхолдер поля пошуку */
+.search input::placeholder {
+  color: #fff;
+}
+
+/* картинка лупи */
+.search img {
+  height: 37px;
+  width: 31px;
+}
+
+/*вивід помилки*/
+.error {
+  color: #c3073f;
+}
+
+/*повернення назад*/
+.back {
+  display: flex;
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.back:hover {
+  color: #c3073f;
+}
+
+.back:hover span {
+  background: url(../image/arrow-back-red.svg);
+}
+
+.back span {
+  height: 24px;
+  width: 24px;
+  padding-right: 7px;
+  background: url(../image/arrow-back.svg);
+}
+
+#error {
+  display: none;
+}
+
+#error h2 {
+  color: #c3073f;
+}
+

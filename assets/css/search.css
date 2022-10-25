@@ -1,0 +1,314 @@
+.movies-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-top: 25px;
+  margin-bottom: 20px
+}
+
+.movies-top p {
+  color: white;
+}
+
+.movies-top .sort-link {
+  color: #c3073f;;
+  text-decoration: none;
+}
+
+.movies-top .sort-link:hover {
+  color: #ffffff;
+}
+
+.movies-top .sort-link.active {
+  color: #2d6013;
+}
+
+#success {
+  display: none;
+}
+
+#success h2 {
+  color: #5fc307;
+}
+
+.add-film #success h2 {
+  margin-left: 100px;
+}
+
+.add-film__inner {
+  margin-top: 10px;
+  width: 1160px;
+  max-height: 100%;
+  background: #0d0d0d;
+  border: 1px solid #950740;
+  border-radius: 11px;
+}
+
+.add-film__inner .title {
+  margin-left: 100px;
+}
+
+.add-btn {
+  background: #2d6013;;
+  border: 0;
+  font-size: 15px;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-weight: 600;
+  padding: 10px 25px;
+  cursor: pointer;
+}
+
+.add-link:hover .add-btn,
+#addData:hover{
+  color: #2d6013;
+  background: #ffffff;
+}
+
+.add-link {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+#addData {
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 30px;
+  margin-top: 25px;
+  padding: 10px 85px;
+}
+
+.add-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#sendFile {
+  margin-left: 10px;
+  background: #46c329;
+  border: 0;
+  text-transform: uppercase;
+  color: #ffffff;
+  padding: 10px 25px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  display: none;
+}
+
+#sendFile:hover {
+  color: #46c329;
+  background: #ffffff;
+}
+
+.file-container {
+  margin-right: 105px;
+}
+
+#fileUpload {
+  background: #20A1FF;
+  border: 0;
+  text-transform: uppercase;
+  color: #ffffff;
+  padding: 10px 25px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+#fileUpload:hover {
+  background: #ffffff;
+  color: #20A1FF;
+}
+
+.import-btn {
+  float: right;
+}
+
+.form-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  max-height: 350px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.form-group {
+  width: 375px;
+  margin-bottom: 25px;
+}
+
+.form-item {
+  position: relative;
+  width: 339px;
+  padding: 32px 16px 8px;
+  border: 1px solid #CFD3D5;
+  border-radius: 8px;
+  font-size: 16px;
+  font-family: monospace;
+}
+
+.form-select {
+  width: 375px;
+}
+
+.label-group {
+  font-size: 12px;
+  position: absolute;
+  transform: translate(0, 7px) scale(1);
+  transition: all .1s ease-in-out;
+  z-index: 9;
+  padding-left: 17px;
+  color: #5E6366;
+}
+
+.movie,
+.info-movie {
+  margin-top: 10px;
+  width: 1108px;
+  min-height: 430px;
+  background: #0d0d0d;
+  border: 1px solid #950740;
+  border-radius: 11px;
+  padding: 0 30px;
+}
+
+.movie-inner {
+  display: flex;
+}
+
+.movie img {
+  width: 200px;
+  height: 286px;
+  padding-right: 20px;
+  float: left;
+}
+
+.movie-title,
+.title,
+.movie-title a {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 39px;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.movie-title a:hover {
+  color: #c3073f;
+  text-decoration: none;
+}
+
+.movie-title a {
+  text-decoration: none;
+}
+
+.movie-title a:hover {
+  color: #fff;
+}
+
+.format {
+  font-size: 28px;
+  color: #c3073f;
+}
+
+.year,
+.stars{
+  color: #c3073f;
+}
+
+.description {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 44px;
+  color: #5a5a5a;
+  padding-left: 10px;
+}
+
+.description p {
+  padding: 0 10px;
+  margin-top: 0px;
+}
+
+.info-movies {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.image {
+  width: 250px;
+  height: 170px;
+  margin: 0;
+  padding: 0;
+}
+
+.screen {
+  margin-bottom: 40px;
+}
+
+.screen ul {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 0;
+}
+
+.screen li {
+  list-style: none;
+}
+
+.trailer {
+  width: 200px;
+  height: 100%;
+  background: #c3073f;
+  border: 0;
+  font-size: 15px;
+  padding: 16px;
+  color: #ffffff;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+#search__button {
+  cursor: pointer;
+  z-index: 1;
+}
+
+#search__button button {
+  background: transparent;
+  border: 0;
+}
+
+.action {
+  margin-left: 20px;
+}
+
+.delete-btn,
+.login-btn {
+  width: 100%;
+  background: #c3073f;
+  border: 0;
+  font-size: 15px;
+  padding: 16px;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.login-btn{
+  margin-top: 70px;
+}
+
+.delete-btn:hover,
+.login-btn:hover {
+  background: #ffffff;
+  color: #c3073f;
+  cursor: pointer;
+}
