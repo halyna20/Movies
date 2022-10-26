@@ -31,10 +31,15 @@ class UserService
                     break;
             }
         }
+        $checkEmail = $this->user->getUserByEmail($email);
+        if ($checkEmail) {
+            $output = ['error' => 'Користувач з таким email вже існує'];
+            return $output;
+        }
+        $password = password_hash($password, PASSWORD_BCRYPT, ['cost' => 11]);
 
         $newUser = $this->user->createUser($nickname, $email, $name, $surname, $password);
-        var_dump($newUser);
-        setcookie("user", 1, time()+3600, "/");
+
         return $newUser;
     }
 
@@ -50,9 +55,18 @@ class UserService
             }
         }
 
-        $userFind = $this->user->getUser($email, $password);
+        $userFind = $this->user->getUserByEmail($email);
+
         if ($userFind) {
-            setcookie("user", $userFind['id'], time()+3600, "/");
+            if (password_verify($password, $userFind['password'])) {
+                setcookie("user", $userFind['id'], time()+3600, "/");
+            } else {
+                $output = ['error' => "Пароль не вірний"];
+                return $output;
+            }
+        } else {
+            $output = ['error' => "Користувач не знайдений"];
+            return $output;
         }
         return $userFind;
     }

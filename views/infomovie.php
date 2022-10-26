@@ -10,5 +10,4 @@
 </body>
 
 <script src="/assets/js/info.js"></script>
-
 </html>

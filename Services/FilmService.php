@@ -73,9 +73,9 @@ class FilmService
         $id = $this->checkInput($id);
         $filmById = $this->film->getFilmById($id);
 
-        if ($filmById[0]["frame"]) {
-            $movieFrame = array_diff(scandir($_SERVER['DOCUMENT_ROOT'] . $filmById[0]["frame"], 1), array('..', '.'));
-            $filmById[0]["movieFrame"] = $movieFrame;
+        if ($filmById["frame"]) {
+            $movieFrame = array_diff(scandir($_SERVER['DOCUMENT_ROOT'] . $filmById["frame"], 1), array('..', '.'));
+            $filmById["movieFrame"] = $movieFrame;
         }
 
         return $filmById;
@@ -106,6 +106,7 @@ class FilmService
         if ($is_check) {
             if (move_uploaded_file($file['tmp_name'], $uploadfile)) {
                 $txt_file = file_get_contents($uploadfile);
+
                 $txt_file = rtrim(preg_replace("/[\r\n]+/m", "\r\n", $txt_file));
                 $rows = explode("\n", $txt_file);
 
@@ -123,8 +124,11 @@ class FilmService
                     $year = $arrFilms[$i][1]['Release Year'];
                     $format = $arrFilms[$i][2]['Format'];
                     $stars = $arrFilms[$i][3]['Stars'];
-
-                    $import = $this->film->importData($title, $year, $format, $stars);
+                    if ($title != NULL && $year != NULL && $format != NULL && $stars != NULL) {
+                        $import = $this->film->importData($title, $year, $format, $stars);
+                    } else {
+                        $output = array('error' => 'Виявлено проблеми у файлі');
+                    }
                 }
             }
         } else {

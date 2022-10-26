@@ -5,6 +5,7 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/views/include/header.php';
     <div class="container">
         <div class="add-film__inner">
             <div id="success"></div>
+            <div id="error"></div>
             <div class="add-top">
                 <h2 class="title">Додати фільм</h2>
                 <div class="file-container">

@@ -35,16 +35,16 @@ class Database
 
         $i = 0;
         $countRows = $result->num_rows;
+
         $data = [];
         if ($countRows > 1) {
             while ($i < $countRows ) {
                 $data[] = $result->fetch_assoc();
                 $i++;
             }
-        } else {
+        } else if ($countRows === 1){
             $data = $result->fetch_assoc();
         }
-
 
         if (count($data) > 0) {
             return $data;

@@ -94,7 +94,6 @@
   font-size: 15px;
   font-weight: 600;
   cursor: pointer;
-  display: none;
 }
 
 #sendFile:hover {
@@ -307,7 +306,9 @@
 }
 
 .delete-btn:hover,
-.login-btn:hover {
+.login-btn:hover,
+.sign:hover,
+.rega:hover{
   background: #ffffff;
   color: #c3073f;
   cursor: pointer;

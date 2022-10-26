@@ -1,26 +1,104 @@
+.main-sign {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 140px);
+    flex-direction: column;
+}
+
 #login-form {
-  text-align: center;
-  margin-top: 10%;
+    text-align: center;
+    margin-top: 10%;
 }
 
 #login-form input {
-  max-width: 90% !important;
-  margin-bottom: 5%;
-  padding: 10px;
-  width: 100%;
+    max-width: 90% !important;
+    margin-bottom: 5%;
+    padding: 10px;
+    width: 100%;
 }
 
 #login-form input::placeholder {
-  color: #fff;
+    color: #fff;
 }
 
 #login-button {
-  max-width: 95%;
+    max-width: 95%;
 }
 
 #login-area p {
-  text-align: center;
+    text-align: center;
 }
+
 #login-area {
-	height: 380px;
+    height: 380px;
+}
+
+.sign-top {
+    text-align: center;
+}
+
+.sign-top h1 {
+    color: #c3073f;
+    margin: 10px 0px;
+    text-align: center;
+}
+
+.sign-top p {
+    margin: 0;
+    margin-bottom: 20px;
+    font-size: 1.1em;
+    color: #5a5a5a;
+}
+
+.sign-img {
+    width: 150px;
+    height: 150px;
+}
+
+.sign-bottom {
+    box-sizing: border-box;
+    width: 479px;
+    height: 497px;
+    background: linear-gradient(
+            109.46deg,
+            rgba(201, 201, 201, 0.5) 1.57%,
+            rgba(196, 196, 196, 0.1) 100%
+    );
+    backdrop-filter: blur(60px);
+    border-radius: 27px;
+    padding: 1.25em;
+}
+
+.sign-bottom p {
+    font-size: 1em;
+}
+
+.sign-bottom label,
+.sign-bottom p {
+    color: #ffffff;
+}
+
+.sign-data input {
+    padding: 10px 12px;
+    background: linear-gradient(
+            109.46deg,
+            rgba(201, 201, 201, 0.8) 1.57%,
+            rgba(196, 196, 196, 0.1) 100%
+    );
+    opacity: 0.5;
+    backdrop-filter: blur(60px);
+    border-radius: 7px;
+    border: none;
+    color: #ffffff;
+    font-size: 15px;
+    max-width: 175px;
+    outline: none;
+}
+
+.sign-data input:focus {
+    box-shadow: 0 0 5px rgb(255, 19, 19, 1);
+    -webkit-box-shadow: 0 0 5px rgba(255, 19, 19, 1);
+    -moz-box-shadow: 0 0 5px rgba(255, 19, 19, 1);
+    border: 1px solid #ffffff;
 }

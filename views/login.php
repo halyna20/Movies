@@ -2,18 +2,18 @@
 include $_SERVER['DOCUMENT_ROOT'] . '/views/include/header.php';
 ?>
 
-<main class="main-filter">
-    <div class="filter-top">
-        <img src="../assets/img/popcorn1.svg" alt="" class="filter-img">
+<main class="main-sign">
+    <div class="sign-top">
+        <img src="../assets/img/popcorn1.svg" alt="" class="sign-img">
         <h1>KINOBANDA</h1>
         <p>Знайди фільм на свій смак</p>
     </div>
-
-    <div class="filter-bottom" id="login-area">
+    <div id="error"></div>
+    <div class="sign-bottom" id="login-area">
         <form id="login-form" method="POST">
-            <div class="filter-data">
-                <input type="text" name="emailAuth" placeholder="Введіть свій email">
-                <input type="password" name="passAuth" placeholder="Введіть свій пароль">
+            <div class="sign-data">
+                <input type="email" name="emailAuth" placeholder="Введіть свій email" required>
+                <input type="password" name="passAuth" placeholder="Введіть свій пароль" required>
             </div>
             <button type="submit" class="login-btn" id="login-button">Увійти</button>
         </form>
@@ -21,6 +21,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/views/include/header.php';
 
 </main>
 
+<script src="/assets/js/message.js"></script>
 <script src="/assets/js/authorization.js"></script>
 </body>
 

@@ -1,4 +1,4 @@
---assets - folder for styles and scripts
+--assets -  folder that contains static files
 ------css - contains all project styles
 ------img - folder with images
 ------js - folder for javascript files
@@ -13,6 +13,6 @@
 
 --Services - files for data processing
 
---upload - folder to download imported files
+--upload - folder that contains imported files
 
 --views - files to display pages

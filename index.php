@@ -8,6 +8,14 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/views/include/header.php';
             <div id="error"></div>
             <div class="movies-top">
                 <p>Сортування: <a class="sort-link" id="sort-link" href="#" data-name="0">за назвою</a></p>
+                <form id="searchForm">
+                    <div class="search">
+                        <input id="search__input" type="text" name="search" placeholder="Шукати">
+                        <div id="search__button">
+                            <button><img src="/assets/img/search.svg" alt="search"/></button>
+                        </div>
+                    </div>
+                </form>
                <a class="add-link" href="<?php echo $siteName . '/views/add_film.php'; ?>"> <button class="add-btn">Додати</button></a>
             </div>
 

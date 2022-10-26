@@ -10,10 +10,8 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/conf/setting.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kinobanda</title>
 
-    <link rel="stylesheet" href="/assets/css/style.css" ?>
-    <link rel="stylesheet" href="/assets/css/filterBlock.css">
-    <link rel="stylesheet" href="/assets/css/search.css">
-    <link rel="stylesheet" href="/assets/css/comment.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/movie.css">
     <link rel="stylesheet" href="/assets/css/login.css">
     <link rel="stylesheet" href="/assets/css/register.css">
     <link rel="stylesheet" href="/assets/css/media.css">
@@ -32,15 +30,6 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/conf/setting.php';
                     <img src="/assets/img/logo.png" alt="logo"/>
                 </a>
             </div>
-
-            <form id="searchForm">
-                <div class="search">
-                    <input id="search__input" type="text" name="search" placeholder="Шукати">
-                    <div id="search__button">
-                        <button><img src="/assets/img/search.svg" alt="search"/></button>
-                    </div>
-                </div>
-            </form>
 
             <?php if (isset($_COOKIE['user'])) { ?>
                 <div>

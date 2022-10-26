@@ -1,40 +1,3 @@
-/*****ToDo:*******
- 1. Авторизація користувача
- ////// 1.1. Візуальне відображення ////
- 1.2. Запит на реєстрацію
- 1.3. Обробка додавання нового користувача
- 1.4. Запит на вхід
- 1.5. Обробка входу
- 1.6. Запит на вихід
- 1.7. Здійснення виходу
- //////// 2. Додати фільм ////////
- ////// 2.1. Візуальне відображення кнопки + форма з додаванням ///////
- /////// 2.2. Створити аякс запит на додавання ///////////
- ////// 2.3. Виконати запит та ///////
- ////// 2.4. Повернути повідомленя про успішне створення /////
- //////// 3. Видалити фільм //////
- ///// 3.1. Візуальне відображення //////
- ///// 3.2. Створити аякс запит ///////
- ///// 3.3. Зробити виконання запиту та повернути повідомлення ////
- ////// 4. Показати інформацію про фільм ////
- ///// 4.1. Зробити візуальне відображення /////
- ///// 4.2. Вивести детальну інформацію про фільм при кліку //////
- //////// 5. Показати список фільмів відсортованих за назвою в алфавітному порядку ///
- //////// 6. Знайти фільм за назвою. /////
- //////// 7. Знайти фільм на ім'я актора. //////
- 8. Імпорт фільмів із текстового файлу (приклад файлу надається “sample_movies.txt”). Файл повинен завантажуватись через веб-інтерфейс.
- 9. Зробити пагінацію
- 9.1 Перевірити чи існує користувач з таким емейлом при реєстрації
- 9.2. Форма входу - перевірка значень
- 9.3. Коли вхід та реєстрація не вдались, то показати помилки
- 10. Навести лад з css
- 11. Зробити доки
- 12. Навести лад в імпорті файлів - якщо не вдався то помилки
- 13. Підготувати БД для імпорту
- 14. Насипати коментів в код дрібку
-
- **/
-
 $(document).ready(function () {
     loadData();
 
@@ -46,7 +9,12 @@ $(document).ready(function () {
             data: {action: action},
             dataType: 'json',
             success: function (data) {
-                let output = displayData(data)
+                let output = "";
+                if (Array.isArray(data)) {
+                   output = displayData(data);
+                } else {
+                    output = displayItem(data);
+                }
                 $('.movies').html(output);
             }
         });
@@ -109,6 +77,36 @@ $(document).ready(function () {
         return output;
     }
 
+    function displayItem(data) {
+        let output = "";
+        output += `<div class="movie">
+                            <h2 class="movie-title">
+                                <a id="movieLink" href="./views/infomovie.php?id=${data.id}" target="_blank">
+                                    ${data.title}
+                                    (${data.year}) </a>
+                            </h2>
+                            <div class="movie-inner">`;
+        if (data.movieImg) {
+            output += `<img src="${data.movieImg}" alt="постер" />`;
+        }
+
+        if (data.description) {
+            output += `<div class="description">
+                                <p>
+                                    ${data.description}
+                                </p>
+                            </div>`;
+
+        }
+
+        output += `<div class="action">
+                                <button class="delete-btn" data-id="${data.id}">Видалити</button>
+                            </div>
+                        </div>
+                    </div>`;
+        return output;
+    }
+
     $('.movies').on('click', '.delete-btn', function () {
         let conf = confirm('Ви впевнені?');
         if (conf) {
@@ -148,10 +146,16 @@ $(document).ready(function () {
             method: 'GET',
             dataType: 'json',
             success: function (data) {
-                if (data.message) {
+                if (data.error) {
                     displayError(data);
                 } else {
-                    let output = displayData(data);
+                    let output = "";
+                    if (Array.isArray(data)) {
+                         output = displayData(data);
+                    } else {
+                         output = displayItem(data);
+                    }
+
                     $('.movies').html(output);
                     $('#searchForm')[0].reset();
                 }

@@ -1,16 +1,17 @@
 <?php
 include $_SERVER['DOCUMENT_ROOT'] . '/views/include/header.php';
 ?>
-    <main class="main-filter">
-        <div class="filter-top">
-            <img src="../assets/img/popcorn1.svg" alt="" class="filter-img">
+    <main class="main-sign">
+        <div class="sign-top">
+            <img src="../assets/img/popcorn1.svg" alt="" class="sign-img ">
             <h1>Реєстрація користувача</h1>
             <p>Знайди фільм на свій смак</p>
         </div>
+        <div id="error"></div>
         <!-- Форма реєстрації -->
-        <div class="filter-bottom" id="register-area">
-            <form action="register.php" id="register-form" method="POST">
-                <div class="filter-data">
+        <div class="sign-bottom" id="register-area">
+            <form id="register-form" method="POST">
+                <div class="sign-data">
                     </br>
                     <input type="text" name="nickname" maxlength="20" placeholder="Введіть свiй логiн " required>
                     </br>
@@ -36,6 +37,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/views/include/header.php';
         </div>
     </main>
 
+<script src="/assets/js/message.js"></script>
 <script src="/assets/js/authorization.js"></script>
 </body>
 

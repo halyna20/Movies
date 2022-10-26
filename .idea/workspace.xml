@@ -1,7 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="92ec306f-0b91-4863-bbe5-f76981922487" name="Changes" comment="" />
+    <list default="true" id="92ec306f-0b91-4863-bbe5-f76981922487" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/assets/img/films/The_Prestige/048ed2c33415d1a70f00.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/img/films/The_Prestige/73ceabdd89624b6655cc.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/img/films/The_Prestige/b4e732ad22ff10abfbbc.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/img/films/The_Prestige/e1bb9cd17d9175c6fae9.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/img/films/thePrestige.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/SearchController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/SearchController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Documentation" beforeDir="false" afterPath="$PROJECT_DIR$/Documentation" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Repositories/UserRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/Repositories/UserRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Services/FilmService.php" beforeDir="false" afterPath="$PROJECT_DIR$/Services/FilmService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Services/UserService.php" beforeDir="false" afterPath="$PROJECT_DIR$/Services/UserService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/comment.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/filterBlock.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/login.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/media.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/media.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/mediaLogin.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/mediamovie.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/mediamovie.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/css/search.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/css/movie.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/addData.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/addData.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/authorization.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/authorization.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/info.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/info.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/message.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/message.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/Database.php" beforeDir="false" afterPath="$PROJECT_DIR$/lib/Database.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/add_film.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/add_film.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/include/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/include/header.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/infomovie.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/infomovie.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/register.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -27,16 +60,16 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/opt/lampp/htdocs/movies/assets/img",
+    "last_opened_file_path": "/opt/lampp/htdocs/movies/assets/img/films",
     "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/assets/img/films" />
       <recent name="$PROJECT_DIR$/assets/img" />
       <recent name="$PROJECT_DIR$/views" />
-      <recent name="$PROJECT_DIR$/assets/img/films" />
       <recent name="$PROJECT_DIR$/assets/css" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -61,7 +94,8 @@
       <workItem from="1666449044992" duration="15341000" />
       <workItem from="1666518051342" duration="17959000" />
       <workItem from="1666597600204" duration="45918000" />
-      <workItem from="1666702225300" duration="16303000" />
+      <workItem from="1666702225300" duration="19362000" />
+      <workItem from="1666769233957" duration="13292000" />
     </task>
     <servers />
   </component>

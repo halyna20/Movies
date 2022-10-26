@@ -24,29 +24,28 @@ $( document ).ready(function() {
 function displayDetails(data) {
     let output = "";
     output += `<h2 class="movie-title">
-                    ${data[0].title}
+                    ${data.title}
                 </h2>`;
-    if(data[0].movieImg) {
-        output += `<img src="${data[0].movieImg}" alt="постер" />`;
+    if(data.movieImg) {
+        output += `<img src="${data.movieImg}" alt="постер" />`;
     }
 
     output += ` <div class="description">
-                    <div class="format">Формат: ${data[0].format}</div>
-                    <p class="year">Рiк: ${data[0].year}</p>`;
-    if (data[0].stars) {
-        output += `<p class="stars">В ролях: ${data[0].stars}</p>`;
+                    <div class="format">Формат: ${data.format}</div>
+                    <p class="year">Рiк: ${data.year}</p>`;
+    if (data.stars) {
+        output += `<p class="stars">В ролях: ${data.stars}</p>`;
     }
 
-    if(data[0].description) {
-        output += `<p> ${data[0].description}</p>`;
+    if(data.description) {
+        output += `<p> ${data.description}</p>`;
     }
 
-    if (data[0]["frame"]) {
+    if (data['frame']) {
         output += "<div class='screen'> <ul>";
 
-        data[0]["movieFrame"].forEach(function (item) {
-            console.log(item)
-           output += `<li><img class="image" src="${data[0]['frame']}/${item}"></li>`
+        data["movieFrame"].forEach(function (item) {
+           output += `<li><img class="image" src="${data['frame']}/${item}"></li>`
         });
         output += "</ul></div>";
     }

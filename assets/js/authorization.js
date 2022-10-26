@@ -2,7 +2,7 @@ $( document ).ready(function() {
 
     $("#register-form").submit(function (e){
         e.preventDefault();
-        console.log('click');
+
         let formData = $(this).serializeArray();
         let action = "Registration";
         $.ajax({
@@ -12,8 +12,13 @@ $( document ).ready(function() {
                 action: action,
                 data: formData,
             },
-            success: function () {
-                window.location.href = '/views/login.php';
+            dataType: 'json',
+            success: function (data) {
+                if (data.error) {
+                    displayError(data);
+                } else {
+                    window.location.href = '/views/login.php';
+                }
             }
         });
     });
@@ -29,8 +34,14 @@ $( document ).ready(function() {
                 action: action,
                 data: formData,
             },
-            success: function () {
-                window.location.href = '/';
+            dataType: 'json',
+            success: function (data) {
+                if (data.error) {
+                    displayError(data);
+                    $("#login-form")[0].reset();
+                } else {
+                    window.location.href = '/';
+                }
             }
         });
     });

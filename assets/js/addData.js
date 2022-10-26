@@ -25,7 +25,7 @@ $(document).ready(function () {
         let action = "Import";
         let fileData = $('#file').prop('files')[0];
         if (fileData != undefined) {
-            $("#sendFile").css('display', 'block');
+
             let formData = new FormData($('#fileForm')[0]);
             formData.append('file', fileData);
             formData.append('action', action);
@@ -36,11 +36,20 @@ $(document).ready(function () {
                 processData: false,
                 contentType: false,
                 data: formData,
+                dataType: 'json',
                 success: function (data) {
-                    message(data);
+                    if (data.message) {
+                        message(data);
+                    } else if (data.error) {
+                        displayError(data);
+                    }
+
                     $('#file').val('');
                 }
             });
+        } else {
+            let data = {error: 'Оберіть файл!'};
+            displayError(data);
         }
     })
 });

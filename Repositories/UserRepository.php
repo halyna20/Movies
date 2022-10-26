@@ -21,9 +21,8 @@ class UserRepository
         }
     }
 
-    public function getUser($email, $password) {
-        $query = "SELECT id FROM users WHERE `email` LIKE '" . $email . "' AND `password` LIKE '" . $password . "'";
-
+    public function getUserByEmail($email) {
+        $query = "SELECT id, password FROM users WHERE `email` LIKE '" . $email . "'";
         try {
             $result = $this->db->select($query);
 
