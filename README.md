@@ -5,7 +5,7 @@
 <h1>Installation</h1>
 
 <h3>Step 1:  Install the Dependencies</h3>
-<p>Install the <a href="https://docs.docker.com/engine/install/ubuntu/">Docker for Linux</a> or <a href="https://docs.docker.com/desktop/install/windows-install/">Docker for Windows</a></p>
+<p>Install the <a href="https://docs.docker.com/engine/install/ubuntu/">Docker for Linux</a> or <a href="https://docs.docker.com/desktop/install/windows-install/">Docker for Windows</a> and <a href="https://docs.docker.com/compose/install/">Docker Compose</a></p>
 
 <h3>Step 2: Get Project</h3>
 <p>Сreate a directory where you want to use this Docker project.</p>
