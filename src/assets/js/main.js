@@ -6,12 +6,12 @@ $(document).ready(function () {
         $.ajax({
             url: '../../Controllers/FilmController.php',
             method: 'POST',
-            data: {action: action},
+            data: { action: action },
             dataType: 'json',
             success: function (data) {
                 let output = "";
                 if (Array.isArray(data)) {
-                   output = displayData(data);
+                    output = displayData(data);
                 } else {
                     output = displayItem(data);
                 }
@@ -26,8 +26,8 @@ $(document).ready(function () {
         if ($(this).data("name") === 0) {
             let action = "SortByName";
             $.ajax({
-                url: '../../Controllers/FilmController',
-                data: {action: action},
+                url: '../../Controllers/FilmController.php',
+                data: { action: action },
                 method: 'POST',
                 dataType: 'json',
                 success: function (data) {
@@ -116,7 +116,7 @@ $(document).ready(function () {
 
 
             $.ajax({
-                url: '../../Controllers/FilmController',
+                url: '../../Controllers/FilmController.php',
                 data: {
                     action: action,
                     id: id
@@ -124,7 +124,7 @@ $(document).ready(function () {
                 method: 'POST',
                 dataType: 'json',
                 success: function (data) {
-                    $('body,html').animate({scrollTop: 0}, 400);
+                    $('body,html').animate({ scrollTop: 0 }, 400);
                     message(data);
                     btn.parent().parent().parent().remove();
                 },
@@ -138,7 +138,7 @@ $(document).ready(function () {
 
         let action = "Search";
         $.ajax({
-            url: '../../Controllers/SearchController',
+            url: '../../Controllers/SearchController.php',
             data: {
                 action: action,
                 search: data
@@ -151,9 +151,9 @@ $(document).ready(function () {
                 } else {
                     let output = "";
                     if (Array.isArray(data)) {
-                         output = displayData(data);
+                        output = displayData(data);
                     } else {
-                         output = displayItem(data);
+                        output = displayItem(data);
                     }
 
                     $('.movies').html(output);

@@ -1,6 +1,6 @@
-$( document ).ready(function() {
+$(document).ready(function () {
 
-    $("#register-form").submit(function (e){
+    $("#register-form").submit(function (e) {
         e.preventDefault();
 
         let formData = $(this).serializeArray();
@@ -23,7 +23,7 @@ $( document ).ready(function() {
         });
     });
 
-    $("#login-form").submit(function (e){
+    $("#login-form").submit(function (e) {
         e.preventDefault();
         let formData = $(this).serializeArray();
         let action = "Login";
@@ -40,13 +40,13 @@ $( document ).ready(function() {
                     displayError(data);
                     $("#login-form")[0].reset();
                 } else {
-                    window.location.href = '/';
+                    window.location.href = '/index.php';
                 }
             }
         });
     });
 
-    $("#signOut").on('click', function (e){
+    $("#signOut").on('click', function (e) {
         e.preventDefault();
 
         let action = "Logout";
@@ -58,7 +58,7 @@ $( document ).ready(function() {
                 action: action,
             },
             success: function () {
-                window.location.href = '/'
+                window.location.href = '/index.php'
             }
         });
     })

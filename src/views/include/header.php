@@ -10,12 +10,12 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/conf/setting.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kinobanda</title>
 
-    <link rel="stylesheet" href="src/assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/movie.css">
-    <link rel="stylesheet" href="<?php $_SERVER['DOCUMENT_ROOT'] ?>/assets/css/login.css">
-    <link rel="stylesheet" href="<?php $_SERVER['DOCUMENT_ROOT'] ?>/assets/css/register.css">
-    <link rel="stylesheet" href="./assets/css/media.css">
-    <link rel="stylesheet" href="./assets/css/mediamovie.css">
+    <link rel="stylesheet" href="<?php echo $siteName . '/assets/css/style.css'; ?>">
+    <link rel="stylesheet" href="<?php echo $siteName . '/assets/css/movie.css'; ?>">
+    <link rel="stylesheet" href="<?php echo $siteName . '/assets/css/login.css'; ?>">
+    <link rel="stylesheet" href="<?php echo $siteName . '/assets/css/register.css'; ?>">
+    <link rel="stylesheet" href="<?php echo $siteName . '/assets/css/media.css'; ?>">
+    <link rel="stylesheet" href="<?php echo $siteName . '/assets/css/mediamovie.css'; ?>">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap" rel="stylesheet" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
@@ -26,8 +26,8 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/conf/setting.php';
             <div class="container">
 
                 <div class="logo">
-                    <a href="../../index.php">
-                        <img src="/assets/img/logo.png" alt="logo" />
+                    <a href="<?php echo $siteName . '/index.php' ?>">
+                        <img src="<?php echo $siteName . '/assets/img/logo.png' ?>" alt="logo" />
                     </a>
                 </div>
 

@@ -1,4 +1,4 @@
-$( document ).ready(function() {
+$(document).ready(function () {
     loadDetails();
 
     function loadDetails() {
@@ -6,7 +6,7 @@ $( document ).ready(function() {
         let id = GetURLParameter('id');
 
         $.ajax({
-            url: '../../Controllers/FilmController',
+            url: '../../Controllers/FilmController.php',
             data: {
                 action: action,
                 id: id
@@ -26,7 +26,7 @@ function displayDetails(data) {
     output += `<h2 class="movie-title">
                     ${data.title}
                 </h2>`;
-    if(data.movieImg) {
+    if (data.movieImg) {
         output += `<img src="${data.movieImg}" alt="постер" />`;
     }
 
@@ -37,7 +37,7 @@ function displayDetails(data) {
         output += `<p class="stars">В ролях: ${data.stars}</p>`;
     }
 
-    if(data.description) {
+    if (data.description) {
         output += `<p> ${data.description}</p>`;
     }
 
@@ -45,7 +45,7 @@ function displayDetails(data) {
         output += "<div class='screen'> <ul>";
 
         data["movieFrame"].forEach(function (item) {
-           output += `<li><img class="image" src="${data['frame']}/${item}"></li>`
+            output += `<li><img class="image" src="${data['frame']}/${item}"></li>`
         });
         output += "</ul></div>";
     }
@@ -56,15 +56,12 @@ function displayDetails(data) {
 }
 
 
-function GetURLParameter(sParam)
-{
+function GetURLParameter(sParam) {
     var sPageURL = window.location.search.substring(1);
     var sURLVariables = sPageURL.split('&');
-    for (var i = 0; i < sURLVariables.length; i++)
-    {
+    for (var i = 0; i < sURLVariables.length; i++) {
         var sParameterName = sURLVariables[i].split('=');
-        if (sParameterName[0] == sParam)
-        {
+        if (sParameterName[0] == sParam) {
             return decodeURIComponent(sParameterName[1]);
         }
     }

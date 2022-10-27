@@ -2,7 +2,9 @@ version: '3'
 
 services:
   php:
-    image: php:8.1-fpm
+    build: 
+      context: .
+      dockerfile: Dockerfile
     volumes: 
       - './src:/var/www/html'
   
@@ -11,7 +13,7 @@ services:
     ports: 
       - 80:80
     volumes: 
-      - './src:/var/www/html'
+      - './src:/usr/share/nginx/html'
       - './docker/nginx/conf.d:/etc/nginx/conf.d'
   
   mysql:
