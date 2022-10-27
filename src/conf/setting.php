@@ -1,0 +1,2 @@
+<?php
+$siteName = "http://localhost";
