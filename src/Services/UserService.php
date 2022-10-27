@@ -1,13 +1,17 @@
 <?php
 include_once $_SERVER['DOCUMENT_ROOT'] . '/Repositories/UserRepository.php';
+include_once $_SERVER['DOCUMENT_ROOT'] . '/Services/HelpService.php';
 
 class UserService
 {
     protected  $user;
+    protected HelpService $service;
+
 
     public function __construct()
     {
         $this->user = new UserRepository();
+        $this->service = new HelpService();
     }
 
     public function createUser($data)
@@ -15,19 +19,19 @@ class UserService
         foreach ($data as $value) {
             switch ($value['name']) {
                 case "nickname":
-                    $nickname = $this->checkInput($value['value']);
+                    $nickname = $this->service->checkInput($value['value']);
                     break;
                 case "email":
-                    $email = $this->checkInput($value['value']);
+                    $email = $this->service->checkInput($value['value']);
                     break;
                 case "name":
-                    $name = $this->checkInput($value['value']);
+                    $name = $this->service->checkInput($value['value']);
                     break;
                 case "surname":
-                    $surname = $this->checkInput($value['value']);
+                    $surname = $this->service->checkInput($value['value']);
                     break;
                 case "password":
-                    $password = $this->checkInput($value['value']);
+                    $password = $this->service->checkInput($value['value']);
                     break;
             }
         }
@@ -43,14 +47,15 @@ class UserService
         return $newUser;
     }
 
-    public function login($data) {
+    public function login($data)
+    {
         foreach ($data as $value) {
             switch ($value['name']) {
                 case "emailAuth":
-                    $email = $this->checkInput($value['value']);
+                    $email = $this->service->checkInput($value['value']);
                     break;
                 case "passAuth":
-                    $password = $this->checkInput($value['value']);
+                    $password = $this->service->checkInput($value['value']);
                     break;
             }
         }
@@ -59,7 +64,7 @@ class UserService
 
         if ($userFind) {
             if (password_verify($password, $userFind['password'])) {
-                setcookie("user", $userFind['id'], time()+3600, "/");
+                setcookie("user", $userFind['id'], time() + 3600, "/");
             } else {
                 $output = ['error' => "Пароль не вірний"];
                 return $output;
@@ -71,17 +76,9 @@ class UserService
         return $userFind;
     }
 
-    public function logout() {
+    public function logout()
+    {
         $cookie = setcookie("user", "", 0, "/");
         return $cookie;
-    }
-
-    protected function checkInput($data)
-    {
-        $data = trim($data);
-        $data = stripslashes($data);
-        $data = htmlspecialchars($data);
-
-        return $data;
     }
 }

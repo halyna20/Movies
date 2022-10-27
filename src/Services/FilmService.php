@@ -1,13 +1,16 @@
 <?php
 include_once $_SERVER['DOCUMENT_ROOT'] . '/Repositories/FilmRepository.php';
+include_once $_SERVER['DOCUMENT_ROOT'] . '/Services/HelpService.php';
 
 class FilmService
 {
     protected FilmRepository $film;
+    protected HelpService $service;
 
     public function __construct()
     {
         $this->film = new FilmRepository();
+        $this->service = new HelpService();
     }
 
     public function getFilmsList()
@@ -30,19 +33,19 @@ class FilmService
         foreach ($data as $value) {
             switch ($value['name']) {
                 case "name":
-                    $title = $this->checkInput($value['value']);
+                    $title = $this->service->checkInput($value['value']);
                     break;
                 case "year":
-                    $year = $this->checkInput($value['value']);
+                    $year = $this->service->checkInput($value['value']);
                     break;
                 case "format":
-                    $format = $this->checkInput($value['value']);
+                    $format = $this->service->checkInput($value['value']);
                     break;
                 case "stars":
-                    $stars = $this->checkInput($value['value']);
+                    $stars = $this->service->checkInput($value['value']);
                     break;
                 case "description":
-                    $description = $this->checkInput($value['value']);
+                    $description = $this->service->checkInput($value['value']);
                     break;
             }
         }
@@ -57,7 +60,7 @@ class FilmService
 
     public function deleteFilm($id)
     {
-        $id = $this->checkInput($id);
+        $id = $this->service->checkInput($id);
         $deleteFilm = $this->film->deleteFilm($id);
         $output = [];
 
@@ -70,7 +73,7 @@ class FilmService
 
     public function getFilmById($id)
     {
-        $id = $this->checkInput($id);
+        $id = $this->service->checkInput($id);
         $filmById = $this->film->getFilmById($id);
 
         if ($filmById["frame"]) {
@@ -83,7 +86,7 @@ class FilmService
 
     public function search($value)
     {
-        $value = $this->checkInput($value);
+        $value = $this->service->checkInput($value);
         $searchResult = $this->film->search($value);
 
         return $searchResult;
@@ -138,14 +141,5 @@ class FilmService
             $output = array('message' => 'Імпорт даних здійснено');
         }
         return $output;
-    }
-
-    protected function checkInput($data)
-    {
-        $data = trim($data);
-        $data = stripslashes($data);
-        $data = htmlspecialchars($data);
-
-        return $data;
     }
 }
