@@ -140,7 +140,6 @@ $(document).ready(function () {
         e.preventDefault();
         let data = $(this).find('#search__input');
         data = validateSearch(data);
-        console.log(data)
         if (data) {
             let action = "Search";
             $.ajax({

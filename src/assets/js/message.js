@@ -6,7 +6,6 @@ function message(data) {
 }
 
 function displayError(data) {
-    console.log(data)
     $('#error').html(`<h2>${data.error}</h2>`);
     $('#error').fadeIn("slow", function(){
         $("#error").fadeOut(4000);
