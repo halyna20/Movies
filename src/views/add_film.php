@@ -23,6 +23,7 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/views/include/header.php';
                     <div class="form-group">
                         <label class="label-group" for="name">Назва фільму</label>
                         <input id="name" name="name" class="form-item" type="text" placeholder="Введіть назву фільму" required>
+                        <label class="error" for="name"></label>
                     </div>
                     <div class="form-group">
                         <label class="label-group" for="year">Рік випуску</label>
@@ -44,10 +45,12 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/views/include/header.php';
                     <div class="form-group">
                         <label class="label-group" for="stars">Список акторів</label>
                         <textarea id="stars" class="form-item" name="stars" placeholder="Введіть ім'я акторів"></textarea>
+                        <label class="error" for="stars"></label>
                     </div>
                     <div class="form-group">
                         <label class="label-group" for="description">Опис фільму</label>
                         <textarea id="description" class="form-item" name="description" - placeholder="Введіть опис фільму"></textarea>
+                        <label class="error" for="description"></label>
                     </div>
                 </div>
                 <button class="add-btn" type="submit" id="addData">Додати</button>
@@ -56,6 +59,7 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/views/include/header.php';
     </div>
 </main>
 <script src="/assets/js/message.js"></script>
+<script src="/assets/js/validation.js"></script>
 <script src="/assets/js/addData.js"></script>
 </body>
 

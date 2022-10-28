@@ -18,7 +18,7 @@
 <p>Run <b>docker-compose up -d --build</b></p>
 
 <h3>Step 5: Database settings</h3>
-<p>Create a database and import data from a file "movies.sql"</p>
+<p>Create a database and import data from a file "/src/film.sql"</p>
 <p>Open "src/conf/db.php" in project and change the value for the database connection:</p>
 <p>In "DB_HOST" set your hostname;</p>
 <p>In "DB_USER" set the database username;</p>

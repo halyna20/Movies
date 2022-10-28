@@ -16,7 +16,9 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/views/include/header.php';
                         </div>
                     </div>
                 </form>
-               <a class="add-link" href="<?php echo $siteName . '/views/add_film.php'; ?>"> <button class="add-btn">Додати</button></a>
+                <?php if(isset($_COOKIE['user'])) {?>
+                    <a class="add-link" href="<?php echo $siteName . '/views/add_film.php'; ?>"> <button class="add-btn">Додати</button></a>
+                <?php } ?>
             </div>
 
             <div class="movies"></div>
@@ -24,6 +26,7 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/views/include/header.php';
     </main>
 
     <script src="/assets/js/message.js"></script>
+    <script src="/assets/js/validation.js"></script>
     <script src="/assets/js/authorization.js"></script>
     <script src="/assets/js/main.js"></script>
 </body>

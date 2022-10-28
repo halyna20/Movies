@@ -18,6 +18,7 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/conf/setting.php';
     <link rel="stylesheet" href="<?php echo $siteName . '/assets/css/mediamovie.css'; ?>">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap" rel="stylesheet" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
 </head>
 
 <body>

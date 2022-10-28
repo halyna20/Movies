@@ -22,7 +22,7 @@ class FilmRepository
     }
 
     public function getFilmsByName() {
-        $query = "SELECT * FROM movies ORDER BY title";
+        $query = "SELECT * FROM movies ORDER BY  title";
 
         try {
             $result = $this->db->select($query);
@@ -33,7 +33,7 @@ class FilmRepository
         }
     }
 
-    public function addFilm($title, $year, $format, $stars, $description) {
+    public function addFilm($title, $year, $format, $stars = NULL, $description = NULL) {
         $query = "INSERT INTO movies (`title`, `year`, `format`, `stars`, `description`) 
                     VALUES ('" . $title . "', '" . $year . "', '" . $format . "', '" . $stars . "', '" . $description . "')";
         try {

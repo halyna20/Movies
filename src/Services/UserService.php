@@ -16,22 +16,23 @@ class UserService
 
     public function createUser($data)
     {
-        foreach ($data as $value) {
-            switch ($value['name']) {
+
+        foreach ($data as $key => $value) {
+            switch ($key) {
                 case "nickname":
-                    $nickname = $this->service->checkInput($value['value']);
+                    $nickname = $this->service->checkInput($value);
                     break;
                 case "email":
-                    $email = $this->service->checkInput($value['value']);
+                    $email = $this->service->checkInput($value);
                     break;
                 case "name":
-                    $name = $this->service->checkInput($value['value']);
+                    $name = $this->service->checkInput($value);
                     break;
                 case "surname":
-                    $surname = $this->service->checkInput($value['value']);
+                    $surname = $this->service->checkInput($value);
                     break;
                 case "password":
-                    $password = $this->service->checkInput($value['value']);
+                    $password = $this->service->checkInput($value);
                     break;
             }
         }

@@ -6,7 +6,7 @@ $(document).ready(function () {
         $.ajax({
             url: '../../Controllers/FilmController.php',
             method: 'POST',
-            data: { action: action },
+            data: {action: action},
             dataType: 'json',
             success: function (data) {
                 let output = "";
@@ -27,7 +27,7 @@ $(document).ready(function () {
             let action = "SortByName";
             $.ajax({
                 url: '../../Controllers/FilmController.php',
-                data: { action: action },
+                data: {action: action},
                 method: 'POST',
                 dataType: 'json',
                 success: function (data) {
@@ -66,12 +66,14 @@ $(document).ready(function () {
                             </div>`;
 
             }
+            let cookie = getCookie('user');
+            if (cookie != '' && cookie != false) {
 
-            output += `<div class="action">
+                output += `<div class="action">
                                 <button class="delete-btn" data-id="${item.id}">Видалити</button>
-                            </div>
-                        </div>
-                    </div>`;
+                            </div>`;
+            }
+            output += "</div></div>";
         });
 
         return output;
@@ -98,12 +100,14 @@ $(document).ready(function () {
                             </div>`;
 
         }
-
-        output += `<div class="action">
+        let cookie = getCookie('user');
+        if (cookie != '' && cookie != false) {
+            output += `<div class="action">
                                 <button class="delete-btn" data-id="${data.id}">Видалити</button>
-                            </div>
-                        </div>
-                    </div>`;
+                            </div>`;
+        }
+        output += "</div></div>";
+
         return output;
     }
 
@@ -124,7 +128,7 @@ $(document).ready(function () {
                 method: 'POST',
                 dataType: 'json',
                 success: function (data) {
-                    $('body,html').animate({ scrollTop: 0 }, 400);
+                    $('body,html').animate({scrollTop: 0}, 400);
                     message(data);
                     btn.parent().parent().parent().remove();
                 },
@@ -134,32 +138,49 @@ $(document).ready(function () {
 
     $('#searchForm').submit(function (e) {
         e.preventDefault();
-        let data = $(this).find('#search__input').val();
-
-        let action = "Search";
-        $.ajax({
-            url: '../../Controllers/SearchController.php',
-            data: {
-                action: action,
-                search: data
-            },
-            method: 'GET',
-            dataType: 'json',
-            success: function (data) {
-                if (data.error) {
-                    displayError(data);
-                } else {
-                    let output = "";
-                    if (Array.isArray(data)) {
-                        output = displayData(data);
+        let data = $(this).find('#search__input');
+        data = validateSearch(data);
+        console.log(data)
+        if (data) {
+            let action = "Search";
+            $.ajax({
+                url: '../../Controllers/SearchController.php',
+                data: {
+                    action: action,
+                    search: data
+                },
+                method: 'GET',
+                dataType: 'json',
+                success: function (data) {
+                    if (data.error) {
+                        displayError(data);
                     } else {
-                        output = displayItem(data);
-                    }
+                        let output = "";
+                        if (Array.isArray(data)) {
+                            output = displayData(data);
+                        } else {
+                            output = displayItem(data);
+                        }
 
-                    $('.movies').html(output);
-                    $('#searchForm')[0].reset();
+                        $('.movies').html(output);
+                        $('#searchForm')[0].reset();
+                    }
                 }
-            }
-        });
+            });
+        } else {
+            let output = new Object();
+            output.error = 'Не знайдено';
+            displayError(output);
+        }
     });
 });
+
+function getCookie(name) {
+    let pattern = RegExp(name + "=.[^;]*");
+    let matched = document.cookie.match(pattern);
+    if (matched) {
+        let cookie = matched[0].split('=');
+        return cookie[1];
+    }
+    return false;
+}

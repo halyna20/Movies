@@ -2,22 +2,26 @@ $(document).ready(function () {
     $('#addForm').submit(function (e) {
         e.preventDefault();
 
-        let action = "AddFilm";
-        let formData = $(this).serializeArray();
-        $.ajax({
-            url: '../../Controllers/FilmController.php',
-            method: 'POST',
-            data: {
-                action: action,
-                data: formData
-            },
-            dataType: 'json',
-            success: function (data) {
-                message(data);
+        let formData = getValidFilmData();
 
-                $('#addForm')[0].reset();
-            }
-        });
+        if (Object.keys(formData).length > 0) {
+            let action = "AddFilm";
+
+            $.ajax({
+                url: '../../Controllers/FilmController.php',
+                method: 'POST',
+                data: {
+                    action: action,
+                    data: formData
+                },
+                dataType: 'json',
+                success: function (data) {
+                    message(data);
+
+                    $('#addForm')[0].reset();
+                }
+            });
+        }
     });
 
     $("#fileForm").submit(function (e) {
@@ -53,3 +57,24 @@ $(document).ready(function () {
         }
     })
 });
+
+function getValidFilmData() {
+    let name = $('#name');
+    let nameVal = validateFilmName(name);
+    let data = new Object();
+
+    if (!nameVal) {
+        $("label.error[for='name']").text("Не допустимі символи");
+    } else {
+        $("label.error[for='name']").text('');
+        data = {
+            'name': nameVal,
+            'year': $('#year').val(),
+            'format': $('#format').val(),
+            'description' : $('#description').val(),
+            'stars' : $('#stars').val()
+        }
+
+    }
+    return data;
+}
